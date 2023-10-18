@@ -28,16 +28,16 @@ const iconClose = document.querySelector('.icon-close');
 
 loginLink.addEventListener('click', ()=> {
   wrapper.classList.remove('active');
-})
+});
 
 registerLink.addEventListener('click', ()=> {
   wrapper.classList.add('active');
-})
+});
 
 btnPopup.addEventListener('click', ()=> {
   wrapper.classList.add('active-popup');
-})
+});
 
 iconClose.addEventListener('click', ()=> {
   wrapper.classList.remove('active-popup');
-})
+});
