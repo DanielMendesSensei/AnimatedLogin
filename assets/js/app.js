@@ -24,7 +24,13 @@ const wrapper = document.querySelector('.form-box');
 const loginLink = document.querySelector('.login-link');
 const registerLink = document.querySelector('.register-link');
 const btnPopup = document.querySelector('.btnLogin-popup');
+const btnPopupMobile = document.querySelector('.btnLogin-popup-mobile');
 const iconClose = document.querySelector('.icon-close');
+
+//Mobile variables
+const mobileMenulink = document.querySelector('#mobile_menu');
+const closeMenu = document.querySelector('#close_mobile_menu');
+const mobileMenu = document.querySelector('.nav_mobile');
 
 loginLink.addEventListener('click', ()=> {
   wrapper.classList.remove('active');
@@ -38,93 +44,27 @@ btnPopup.addEventListener('click', ()=> {
   wrapper.classList.add('active-popup');
 });
 
+btnPopupMobile.addEventListener('click', ()=> {
+  wrapper.classList.add('active-popup');
+  mobileMenu.classList.remove('active-menu');
+  closeMenu.classList.remove('transform-close');
+  mobileMenulink.classList.remove('active');
+
+});
+
 iconClose.addEventListener('click', ()=> {
   wrapper.classList.remove('active-popup');
 });
 
 //Mobile Menu Function
-const mobileMenulink = document.querySelector('#mobile_menu');
-const closeMenu = document.querySelector('#close_mobile_menu');
-const mobileMenu = document.querySelector('.nav_mobile');
-
 mobileMenulink.addEventListener('click', ()=> {
   mobileMenu.classList.add('active-menu');
   closeMenu.classList.add('transform-close');
-  mobileMenulink.style.display = "none";
+  mobileMenulink.classList.add('active');
 });
 
 closeMenu.addEventListener('click', ()=>{
   mobileMenu.classList.remove('active-menu');
   closeMenu.classList.remove('transform-close');
-  mobileMenulink.style.display = "block";
+  mobileMenulink.classList.remove('active');
 });
-
-
-
-
-
-
-
-/* const mobileMenu = () => {
-  //Get element of menu
-  const mobileMenulink = document.querySelector('#mobile_menu')
-    let innerData = mobileMenulink.innerHTML,
-      activeOrnot
-    
-    activeOrnot = (innerData === 'menu') ? 'não' : 'sim'
-    if (activeOrnot === 'sim'){
-      console.log('SIM')
-      mobileMenulink.innerHTML = "close"
-    } else{
-      console.log('NÃO')
-      mobileMenulink.innerHTML = "menu"
-    }
-  }
-
-  document.querySelector('#mobile_menu').addEventListener('click', mobileMenu)
- */
-/* const mobileMenu = document.querySelector('.nav_mobile');
-
-
-mobileMenulink.addEventListener('click',()=>{
-  mobileMenu.classList.add('active-menu');
-}) */
-
-
-//OLD
-  /* let menu = document.getElementById("mobile_menu");
-
-  activeOrnot = (mobileMenu === 'nav_mobile active-menu') ? 'não' : 'sim'
-  if (activeOrnot === 'sim'){
-    menu.innerHTML = "close";
-    mobileMenu.classList.remove('active-menu');
-    console.log('SIM');
-  } else{
-    menu.innerHTML = "menu";
-    console.log('NÃO');
-  }
-
-
-})
-
-
-
-
-
-// other function
-function change_mobile_menu()
-{
-	if (nav_mobile.style.display == "block")
-	{
-		nav_mobile.style.display = "none";
-		document.getElementById("mobile_menu").style.borderRadius = "10px 0px";
-		document.getElementById("mobile_menu").innerHTML = "menu";
-	}
-	else
-	{
-		nav_mobile.style.display = "block";
-		document.getElementById("mobile_menu").style.borderRadius = "10px 0px 0px 0px";
-		document.getElementById("mobile_menu").innerHTML = "close";
-	}
-}
- */

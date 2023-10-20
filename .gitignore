@@ -1,5 +1,6 @@
 # Distribution / packaging
 linux_venv/
+Old_Functions/
 venv/
 .Python
 build/
